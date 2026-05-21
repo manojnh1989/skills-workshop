@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills Explained</title>
+  <title>Understanding Skills</title>
   <style>
     * {
       margin: 0;
@@ -13,121 +13,121 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f6f8fa;
-      color: #24292f;
-      line-height: 1.7;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0d1117, #161b22);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #c9d1d9;
-      max-width: 800px;
-      margin: auto;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.8;
+      padding: 40px 20px;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
     }
 
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #111827, #1e293b);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section {
+      background: #111827;
+      padding: 35px;
+      border-radius: 18px;
       margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #1e293b;
+      transition: transform 0.2s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
     }
 
     h2 {
-      margin-bottom: 20px;
-      color: #0969da;
+      color: #7dd3fc;
+      margin-bottom: 18px;
       font-size: 2rem;
     }
 
-    h3 {
-      margin-top: 25px;
-      margin-bottom: 12px;
-      color: #1f2328;
-    }
-
-    p {
-      margin-bottom: 16px;
+    p, li {
+      color: #d1d5db;
+      font-size: 1.05rem;
     }
 
     ul {
       margin-left: 20px;
-      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
-    li {
-      margin-bottom: 8px;
-    }
-
-    code {
-      background: #f0f2f5;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: Consolas, monospace;
-    }
-
-    pre {
-      background: #0d1117;
-      color: #c9d1d9;
-      padding: 20px;
-      border-radius: 10px;
-      overflow-x: auto;
-      margin: 20px 0;
-    }
-
-    table {
+    .comparison-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 12px;
     }
 
-    table th,
-    table td {
-      border: 1px solid #d0d7de;
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #334155;
       padding: 14px;
       text-align: left;
     }
 
-    table th {
-      background: #f6f8fa;
+    .comparison-table th {
+      background: #1e293b;
+      color: #7dd3fc;
+    }
+
+    .comparison-table td {
+      background: #0f172a;
+    }
+
+    pre {
+      background: #020617;
+      color: #93c5fd;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 20px;
+      border: 1px solid #334155;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #94a3b8;
+      font-size: 0.95rem;
     }
 
     .highlight {
-      background: #ddf4ff;
-      border-left: 5px solid #0969da;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    footer {
-      background: #0d1117;
-      color: #c9d1d9;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
+      color: #38bdf8;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      .hero h1 {
         font-size: 2.2rem;
       }
 
@@ -135,90 +135,60 @@
         font-size: 1.6rem;
       }
 
-      .card {
-        padding: 22px;
+      .section {
+        padding: 25px;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Skills Explained</h1>
-    <p>
-      Understanding reusable AI skills, why they matter, how they compare with instruction files,
-      and the benefits they bring to scalable AI workflows.
-    </p>
-  </header>
-
   <div class="container">
 
-    <section class="card">
-      <h2>What Are Skills?</h2>
-
+    <div class="hero">
+      <h1>Understanding Skills</h1>
       <p>
-        Skills are reusable capability modules that help an AI assistant perform specialized tasks effectively.
+        Skills are reusable capability modules that help organize instructions,
+        workflows, and domain knowledge in a structured way. They improve
+        maintainability, scalability, and consistency for AI-powered systems.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What are Skills?</h2>
+      <p>
+        Skills are self-contained reusable units that define how a specific task
+        should be performed. A skill usually contains:
       </p>
 
-      <div class="highlight">
-        Think of a skill as a reusable expert workflow for a specific domain or task.
-      </div>
-
-      <p>A skill may include:</p>
-
       <ul>
-        <li>Task-specific instructions</li>
-        <li>Context awareness</li>
-        <li>Best practices</li>
-        <li>Tool usage guidance</li>
-        <li>Workflow logic</li>
-        <li>Examples and standards</li>
+        <li>Instructions for the AI model</li>
+        <li>Context or domain-specific knowledge</li>
+        <li>Examples or workflows</li>
+        <li>Supporting files or resources</li>
       </ul>
 
       <p>
-        Instead of repeatedly writing complex prompts, users can invoke reusable skills.
+        Skills help separate responsibilities into focused modules instead of
+        placing everything in one large instruction file.
       </p>
-    </section>
+    </div>
 
-    <section class="card">
+    <div class="section">
       <h2>Why Skills?</h2>
 
-      <p>
-        Modern AI systems are expected to provide:
-      </p>
-
       <ul>
-        <li>Consistent outputs</li>
-        <li>Faster execution</li>
-        <li>Higher quality responses</li>
-        <li>Reduced prompt repetition</li>
-        <li>Specialized domain expertise</li>
+        <li><span class="highlight">Modularity:</span> Break large logic into reusable pieces.</li>
+        <li><span class="highlight">Maintainability:</span> Easier to update individual capabilities.</li>
+        <li><span class="highlight">Scalability:</span> Add new features without affecting existing ones.</li>
+        <li><span class="highlight">Reusability:</span> The same skill can be used across multiple projects.</li>
+        <li><span class="highlight">Clarity:</span> Organizes domain-specific behavior cleanly.</li>
       </ul>
+    </div>
 
-      <p>
-        Skills solve these problems by packaging reusable expertise into modular components.
-      </p>
-
-      <h3>Without Skills</h3>
-
-      <pre><code>Analyze this Java code, check performance,
-security, thread safety, generate tests,
-and explain all improvements.</code></pre>
-
-      <h3>With Skills</h3>
-
-      <pre><code>Use the Java Code Review Skill.</code></pre>
-
-      <p>
-        The skill already understands review methodology, standards, security checks,
-        testing expectations, and formatting.
-      </p>
-    </section>
-
-    <section class="card">
+    <div class="section">
       <h2>Skills vs Instruction Files</h2>
 
-      <table>
+      <table class="comparison-table">
         <thead>
           <tr>
             <th>Feature</th>
@@ -229,156 +199,118 @@ and explain all improvements.</code></pre>
         <tbody>
           <tr>
             <td>Purpose</td>
-            <td>Reusable capabilities</td>
-            <td>Session guidance</td>
+            <td>Reusable capability module</td>
+            <td>General system guidance</td>
+          </tr>
+          <tr>
+            <td>Structure</td>
+            <td>Organized and modular</td>
+            <td>Usually flat and centralized</td>
           </tr>
           <tr>
             <td>Reusability</td>
             <td>High</td>
-            <td>Usually limited</td>
-          </tr>
-          <tr>
-            <td>Complexity</td>
-            <td>Supports workflows</td>
-            <td>Mostly simple rules</td>
+            <td>Limited</td>
           </tr>
           <tr>
             <td>Scalability</td>
-            <td>Excellent</td>
-            <td>Harder to manage</td>
+            <td>Easy to extend</td>
+            <td>Becomes difficult as size increases</td>
           </tr>
           <tr>
-            <td>Tool Integration</td>
-            <td>Often integrated</td>
-            <td>Usually manual</td>
+            <td>Maintenance</td>
+            <td>Independent updates</td>
+            <td>Changes affect entire file</td>
           </tr>
           <tr>
             <td>Best Use Case</td>
-            <td>Repeated expert tasks</td>
-            <td>One-time instructions</td>
+            <td>Specialized workflows</td>
+            <td>Global instructions</td>
           </tr>
         </tbody>
       </table>
+    </div>
 
-      <h3>Simple Analogy</h3>
-
-      <div class="highlight">
-        <strong>Instruction File:</strong> A checklist before starting work.<br><br>
-        <strong>Skill:</strong> A specialist who already knows how to do the job.
-      </div>
-    </section>
-
-    <section class="card">
+    <div class="section">
       <h2>Benefits of Using Skills</h2>
 
-      <h3>1. Consistency</h3>
-      <p>
-        Skills ensure tasks follow the same methodology every time.
-      </p>
+      <ul>
+        <li>Reduces duplication of instructions</li>
+        <li>Improves consistency across workflows</li>
+        <li>Allows domain-specific specialization</li>
+        <li>Makes collaboration easier in large teams</li>
+        <li>Supports better testing and debugging</li>
+        <li>Improves long-term project organization</li>
+      </ul>
+    </div>
 
-      <h3>2. Faster Workflows</h3>
-      <p>
-        Users avoid repeating large prompts for common tasks.
-      </p>
-
-      <h3>3. Better Specialization</h3>
-      <p>
-        Skills can encapsulate deep domain expertise.
-      </p>
-
-      <h3>4. Easier Maintenance</h3>
-      <p>
-        Updating a skill updates all workflows using it.
-      </p>
-
-      <h3>5. Improved Scalability</h3>
-      <p>
-        Teams can create libraries of reusable skills.
-      </p>
-
-      <h3>6. Reduced Prompt Complexity</h3>
-
-      <pre><code>Use the Cloud Architecture Review Skill.</code></pre>
+    <div class="section">
+      <h2>Basic Structure of a Skill</h2>
 
       <p>
-        Instead of writing huge repetitive prompts.
+        A skill generally contains a folder with instructions, metadata,
+        examples, and optional resources.
       </p>
-
-      <h3>7. Better Collaboration</h3>
-      <p>
-        Shared skills create standardized workflows across teams.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Real-World Examples</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Java Code Review</td>
-            <td>Analyze Java code quality and performance</td>
-          </tr>
-          <tr>
-            <td>SQL Performance Analyzer</td>
-            <td>Detect slow queries and optimizations</td>
-          </tr>
-          <tr>
-            <td>API Documentation Generator</td>
-            <td>Create structured API documentation</td>
-          </tr>
-          <tr>
-            <td>Security Audit Skill</td>
-            <td>Identify vulnerabilities and risks</td>
-          </tr>
-          <tr>
-            <td>Kubernetes Troubleshooter</td>
-            <td>Diagnose deployment issues</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="card">
-      <h2>Suggested Repository Structure</h2>
 
       <pre><code>skills/
-├── java-review-skill/
-├── sql-optimization-skill/
-├── api-doc-generator/
-├── security-audit-skill/
-└── cloud-architecture-review/</code></pre>
-    </section>
-
-    <section class="card">
-      <h2>Final Thoughts</h2>
+└── sql-optimizer/
+    ├── skill.md
+    ├── examples/
+    │   └── sample-query.md
+    └── resources/
+        └── best-practices.md</code></pre>
 
       <p>
-        Skills represent the evolution from simple prompting toward reusable AI capabilities.
+        The <span class="highlight">skill.md</span> file acts as the main entry point.
       </p>
+    </div>
 
-      <div class="highlight">
-        Skills help transform AI systems from instruction-following assistants
-        into reusable and scalable specialists.
-      </div>
+    <div class="section">
+      <h2>Sample Skill</h2>
+
+      <pre><code># skill.md
+
+name: SQL Optimizer
+purpose: Improve SQL query performance
+
+instructions:
+  - Analyze slow SQL queries
+  - Suggest indexing improvements
+  - Recommend query rewrites
+  - Avoid full table scans where possible
+
+examples:
+  - Convert subqueries into joins
+  - Use indexes on filtering columns</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>Where Should Skills Be Placed?</h2>
 
       <p>
-        By combining modularity, consistency, and domain expertise, skills make AI workflows
-        more powerful, maintainable, and production-ready.
+        Skills are commonly stored inside a dedicated <span class="highlight">skills/</span>
+        directory at the root of the repository.
       </p>
-    </section>
+
+      <pre><code>repository-root/
+├── skills/
+│   ├── sql-optimizer/
+│   ├── documentation-helper/
+│   └── api-validator/
+├── src/
+├── README.md
+└── package.json</code></pre>
+
+      <p>
+        Keeping skills in a centralized folder makes discovery, reuse, and
+        maintenance easier across the project.
+      </p>
+    </div>
+
+    <div class="footer">
+      Built for GitHub Pages • Dark Theme • Responsive Design
+    </div>
 
   </div>
-
-  <footer>
-    <p>Skills Documentation Page • GitHub Pages Ready</p>
-  </footer>
-
 </body>
 </html>
