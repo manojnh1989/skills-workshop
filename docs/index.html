@@ -111,4 +111,274 @@
     }
 
     .highlight {
-      backgrou
+      background: #ddf4ff;
+      border-left: 5px solid #0969da;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      background: #0d1117;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Skills Explained</h1>
+    <p>
+      Understanding reusable AI skills, why they matter, how they compare with instruction files,
+      and the benefits they bring to scalable AI workflows.
+    </p>
+  </header>
+
+  <div class="container">
+
+    <section class="card">
+      <h2>What Are Skills?</h2>
+
+      <p>
+        Skills are reusable capability modules that help an AI assistant perform specialized tasks effectively.
+      </p>
+
+      <div class="highlight">
+        Think of a skill as a reusable expert workflow for a specific domain or task.
+      </div>
+
+      <p>A skill may include:</p>
+
+      <ul>
+        <li>Task-specific instructions</li>
+        <li>Context awareness</li>
+        <li>Best practices</li>
+        <li>Tool usage guidance</li>
+        <li>Workflow logic</li>
+        <li>Examples and standards</li>
+      </ul>
+
+      <p>
+        Instead of repeatedly writing complex prompts, users can invoke reusable skills.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Why Skills?</h2>
+
+      <p>
+        Modern AI systems are expected to provide:
+      </p>
+
+      <ul>
+        <li>Consistent outputs</li>
+        <li>Faster execution</li>
+        <li>Higher quality responses</li>
+        <li>Reduced prompt repetition</li>
+        <li>Specialized domain expertise</li>
+      </ul>
+
+      <p>
+        Skills solve these problems by packaging reusable expertise into modular components.
+      </p>
+
+      <h3>Without Skills</h3>
+
+      <pre><code>Analyze this Java code, check performance,
+security, thread safety, generate tests,
+and explain all improvements.</code></pre>
+
+      <h3>With Skills</h3>
+
+      <pre><code>Use the Java Code Review Skill.</code></pre>
+
+      <p>
+        The skill already understands review methodology, standards, security checks,
+        testing expectations, and formatting.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Skills vs Instruction Files</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Skills</th>
+            <th>Instruction Files</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Purpose</td>
+            <td>Reusable capabilities</td>
+            <td>Session guidance</td>
+          </tr>
+          <tr>
+            <td>Reusability</td>
+            <td>High</td>
+            <td>Usually limited</td>
+          </tr>
+          <tr>
+            <td>Complexity</td>
+            <td>Supports workflows</td>
+            <td>Mostly simple rules</td>
+          </tr>
+          <tr>
+            <td>Scalability</td>
+            <td>Excellent</td>
+            <td>Harder to manage</td>
+          </tr>
+          <tr>
+            <td>Tool Integration</td>
+            <td>Often integrated</td>
+            <td>Usually manual</td>
+          </tr>
+          <tr>
+            <td>Best Use Case</td>
+            <td>Repeated expert tasks</td>
+            <td>One-time instructions</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Simple Analogy</h3>
+
+      <div class="highlight">
+        <strong>Instruction File:</strong> A checklist before starting work.<br><br>
+        <strong>Skill:</strong> A specialist who already knows how to do the job.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Benefits of Using Skills</h2>
+
+      <h3>1. Consistency</h3>
+      <p>
+        Skills ensure tasks follow the same methodology every time.
+      </p>
+
+      <h3>2. Faster Workflows</h3>
+      <p>
+        Users avoid repeating large prompts for common tasks.
+      </p>
+
+      <h3>3. Better Specialization</h3>
+      <p>
+        Skills can encapsulate deep domain expertise.
+      </p>
+
+      <h3>4. Easier Maintenance</h3>
+      <p>
+        Updating a skill updates all workflows using it.
+      </p>
+
+      <h3>5. Improved Scalability</h3>
+      <p>
+        Teams can create libraries of reusable skills.
+      </p>
+
+      <h3>6. Reduced Prompt Complexity</h3>
+
+      <pre><code>Use the Cloud Architecture Review Skill.</code></pre>
+
+      <p>
+        Instead of writing huge repetitive prompts.
+      </p>
+
+      <h3>7. Better Collaboration</h3>
+      <p>
+        Shared skills create standardized workflows across teams.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Real-World Examples</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Java Code Review</td>
+            <td>Analyze Java code quality and performance</td>
+          </tr>
+          <tr>
+            <td>SQL Performance Analyzer</td>
+            <td>Detect slow queries and optimizations</td>
+          </tr>
+          <tr>
+            <td>API Documentation Generator</td>
+            <td>Create structured API documentation</td>
+          </tr>
+          <tr>
+            <td>Security Audit Skill</td>
+            <td>Identify vulnerabilities and risks</td>
+          </tr>
+          <tr>
+            <td>Kubernetes Troubleshooter</td>
+            <td>Diagnose deployment issues</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Suggested Repository Structure</h2>
+
+      <pre><code>skills/
+├── java-review-skill/
+├── sql-optimization-skill/
+├── api-doc-generator/
+├── security-audit-skill/
+└── cloud-architecture-review/</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Final Thoughts</h2>
+
+      <p>
+        Skills represent the evolution from simple prompting toward reusable AI capabilities.
+      </p>
+
+      <div class="highlight">
+        Skills help transform AI systems from instruction-following assistants
+        into reusable and scalable specialists.
+      </div>
+
+      <p>
+        By combining modularity, consistency, and domain expertise, skills make AI workflows
+        more powerful, maintainable, and production-ready.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Skills Documentation Page • GitHub Pages Ready</p>
+  </footer>
+
+</body>
+</html>
