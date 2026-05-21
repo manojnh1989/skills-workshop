@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Understanding Skills</title>
+  <title>GitHub Copilot Skills Guide</title>
   <style>
     * {
       margin: 0;
@@ -13,304 +13,360 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.8;
-      padding: 40px 20px;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #161b22, #1f2937);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #58a6ff;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: auto;
+      color: #c9d1d9;
+      font-size: 1.1rem;
     }
 
     .container {
-      max-width: 1100px;
+      width: 90%;
+      max-width: 1200px;
       margin: auto;
+      padding: 40px 0;
     }
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #111827, #1e293b);
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
-      margin-bottom: 40px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      color: #38bdf8;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .section {
-      background: #111827;
-      padding: 35px;
-      border-radius: 18px;
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 30px;
       margin-bottom: 30px;
-      border: 1px solid #1e293b;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease;
     }
 
-    .section:hover {
+    .card:hover {
       transform: translateY(-4px);
     }
 
     h2 {
-      color: #7dd3fc;
-      margin-bottom: 18px;
+      color: #58a6ff;
+      margin-bottom: 20px;
       font-size: 2rem;
     }
 
-    p, li {
-      color: #d1d5db;
-      font-size: 1.05rem;
+    h3 {
+      color: #79c0ff;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #d0d7de;
     }
 
     ul {
-      margin-left: 20px;
+      padding-left: 20px;
       margin-top: 10px;
     }
 
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .comparison-table th,
-    .comparison-table td {
-      border: 1px solid #334155;
-      padding: 14px;
-      text-align: left;
-    }
-
-    .comparison-table th {
-      background: #1e293b;
-      color: #7dd3fc;
-    }
-
-    .comparison-table td {
-      background: #0f172a;
-    }
-
-    pre {
-      background: #020617;
-      color: #93c5fd;
-      padding: 20px;
-      border-radius: 12px;
-      overflow-x: auto;
-      margin-top: 20px;
-      border: 1px solid #334155;
+    li {
+      margin-bottom: 10px;
+      color: #d0d7de;
     }
 
     code {
+      background: #21262d;
+      color: #7ee787;
+      padding: 2px 6px;
+      border-radius: 5px;
       font-family: Consolas, monospace;
-      font-size: 0.95rem;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #94a3b8;
-      font-size: 0.95rem;
+    pre {
+      background: #0b0f14;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
 
     .highlight {
-      color: #38bdf8;
+      color: #f2cc60;
       font-weight: bold;
     }
 
+    .folder-structure {
+      color: #7ee787;
+      font-family: Consolas, monospace;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+      margin-top: 40px;
+    }
+
     @media (max-width: 768px) {
-      .hero h1 {
+      header h1 {
         font-size: 2.2rem;
       }
 
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      .section {
-        padding: 25px;
+      .card {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>GitHub Copilot Skills</h1>
+    <p>
+      A beginner-friendly guide to understanding Skills in GitHub Copilot, why they matter,
+      how they differ from instruction files, and how to create your own reusable skill.
+    </p>
+  </header>
+
   <div class="container">
 
-    <div class="hero">
-      <h1>Understanding Skills</h1>
+    <section class="card">
+      <h2>1. What are Skills?</h2>
       <p>
-        Skills are reusable capability modules that help organize instructions,
-        workflows, and domain knowledge in a structured way. They improve
-        maintainability, scalability, and consistency for AI-powered systems.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>What are Skills?</h2>
-      <p>
-        Skills are self-contained reusable units that define how a specific task
-        should be performed. A skill usually contains:
+        Skills are reusable capability modules that help GitHub Copilot perform specialized tasks.
+        A skill usually contains:
       </p>
 
       <ul>
-        <li>Instructions for the AI model</li>
-        <li>Context or domain-specific knowledge</li>
-        <li>Examples or workflows</li>
-        <li>Supporting files or resources</li>
+        <li>Instructions for Copilot</li>
+        <li>Reusable prompts</li>
+        <li>Reference files or templates</li>
+        <li>Task-specific knowledge</li>
       </ul>
 
       <p>
-        Skills help separate responsibilities into focused modules instead of
-        placing everything in one large instruction file.
+        Think of a skill as a <span class="highlight">mini expert package</span> that teaches Copilot
+        how to solve a specific type of problem consistently.
       </p>
-    </div>
 
-    <div class="section">
-      <h2>Why Skills?</h2>
+      <p>
+        Example:
+      </p>
 
       <ul>
-        <li><span class="highlight">Modularity:</span> Break large logic into reusable pieces.</li>
-        <li><span class="highlight">Maintainability:</span> Easier to update individual capabilities.</li>
-        <li><span class="highlight">Scalability:</span> Add new features without affecting existing ones.</li>
-        <li><span class="highlight">Reusability:</span> The same skill can be used across multiple projects.</li>
-        <li><span class="highlight">Clarity:</span> Organizes domain-specific behavior cleanly.</li>
+        <li>Java API Skill</li>
+        <li>React UI Skill</li>
+        <li>SQL Optimization Skill</li>
+        <li>Security Review Skill</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Skills vs Instruction Files</h2>
+    <section class="card">
+      <h2>2. Why Skills?</h2>
 
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Skills</th>
-            <th>Instruction Files</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Purpose</td>
-            <td>Reusable capability module</td>
-            <td>General system guidance</td>
-          </tr>
-          <tr>
-            <td>Structure</td>
-            <td>Organized and modular</td>
-            <td>Usually flat and centralized</td>
-          </tr>
-          <tr>
-            <td>Reusability</td>
-            <td>High</td>
-            <td>Limited</td>
-          </tr>
-          <tr>
-            <td>Scalability</td>
-            <td>Easy to extend</td>
-            <td>Becomes difficult as size increases</td>
-          </tr>
-          <tr>
-            <td>Maintenance</td>
-            <td>Independent updates</td>
-            <td>Changes affect entire file</td>
-          </tr>
-          <tr>
-            <td>Best Use Case</td>
-            <td>Specialized workflows</td>
-            <td>Global instructions</td>
-          </tr>
-        </tbody>
+      <p>
+        Skills improve the quality and consistency of Copilot-generated responses.
+      </p>
+
+      <h3>Main Reasons</h3>
+      <ul>
+        <li>Standardize coding practices across teams</li>
+        <li>Reduce repetitive prompt writing</li>
+        <li>Provide domain-specific intelligence</li>
+        <li>Improve code consistency</li>
+        <li>Enable reusable workflows</li>
+        <li>Help Copilot understand project conventions</li>
+      </ul>
+
+      <p>
+        Instead of repeatedly explaining project rules to Copilot,
+        the skill acts as a reusable knowledge layer.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3. Skills vs Instruction Files</h2>
+
+      <p>
+        Skills and instruction files are related, but they solve different problems.
+      </p>
+
+      <table style="width:100%; border-collapse: collapse; margin-top:20px;">
+        <tr style="background:#21262d;">
+          <th style="padding:15px; border:1px solid #30363d;">Feature</th>
+          <th style="padding:15px; border:1px solid #30363d;">Skills</th>
+          <th style="padding:15px; border:1px solid #30363d;">Instruction Files</th>
+        </tr>
+
+        <tr>
+          <td style="padding:15px; border:1px solid #30363d;">Purpose</td>
+          <td style="padding:15px; border:1px solid #30363d;">Reusable capabilities</td>
+          <td style="padding:15px; border:1px solid #30363d;">Behavior guidance</td>
+        </tr>
+
+        <tr>
+          <td style="padding:15px; border:1px solid #30363d;">Scope</td>
+          <td style="padding:15px; border:1px solid #30363d;">Task or domain specific</td>
+          <td style="padding:15px; border:1px solid #30363d;">Repository-wide instructions</td>
+        </tr>
+
+        <tr>
+          <td style="padding:15px; border:1px solid #30363d;">Reusability</td>
+          <td style="padding:15px; border:1px solid #30363d;">Highly reusable</td>
+          <td style="padding:15px; border:1px solid #30363d;">Mostly project-specific</td>
+        </tr>
+
+        <tr>
+          <td style="padding:15px; border:1px solid #30363d;">Complexity</td>
+          <td style="padding:15px; border:1px solid #30363d;">Can contain workflows/templates</td>
+          <td style="padding:15px; border:1px solid #30363d;">Usually plain guidance</td>
+        </tr>
       </table>
-    </div>
 
-    <div class="section">
-      <h2>Benefits of Using Skills</h2>
+      <h3>Simple Analogy</h3>
+      <p>
+        <span class="highlight">Instruction File</span> = Company rules document.
+      </p>
+
+      <p>
+        <span class="highlight">Skill</span> = Specialized engineer with reusable expertise.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>4. Benefits of Using Skills</h2>
 
       <ul>
-        <li>Reduces duplication of instructions</li>
-        <li>Improves consistency across workflows</li>
-        <li>Allows domain-specific specialization</li>
-        <li>Makes collaboration easier in large teams</li>
-        <li>Supports better testing and debugging</li>
-        <li>Improves long-term project organization</li>
+        <li><strong>Better Accuracy:</strong> Copilot understands the domain better.</li>
+        <li><strong>Consistency:</strong> Teams follow the same implementation patterns.</li>
+        <li><strong>Faster Development:</strong> Less time spent re-explaining prompts.</li>
+        <li><strong>Knowledge Sharing:</strong> Best practices become reusable assets.</li>
+        <li><strong>Scalability:</strong> New developers onboard faster.</li>
+        <li><strong>Automation:</strong> Repetitive tasks become easier to generate.</li>
       </ul>
-    </div>
-
-    <div class="section">
-      <h2>Basic Structure of a Skill</h2>
 
       <p>
-        A skill generally contains a folder with instructions, metadata,
-        examples, and optional resources.
+        Skills are especially useful in large enterprise repositories where standards and
+        architecture patterns must remain consistent.
       </p>
+    </section>
 
-      <pre><code>skills/
-└── sql-optimizer/
-    ├── skill.md
-    ├── examples/
-    │   └── sample-query.md
-    └── resources/
-        └── best-practices.md</code></pre>
+    <section class="card">
+      <h2>5. Basic Skill Structure</h2>
 
       <p>
-        The <span class="highlight">skill.md</span> file acts as the main entry point.
+        A skill normally contains metadata, instructions, and reusable context.
       </p>
-    </div>
 
-    <div class="section">
-      <h2>Sample Skill</h2>
+      <h3>Example Repository Structure</h3>
+
+      <pre class="folder-structure">
+.github/
+└── skills/
+    └── java-api-skill/
+        ├── skill.md
+        ├── examples.md
+        └── templates/
+            └── controller-template.java
+      </pre>
+
+      <h3>Where Should Skills Be Placed?</h3>
+
+      <p>
+        Skills should generally be placed under:
+      </p>
+
+      <pre><code>.github/skills/</code></pre>
+
+      <p>
+        GitHub Copilot can use these repository-level skill definitions to better understand
+        project-specific reusable capabilities.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>6. Simple Sample Skill</h2>
+
+      <p>
+        Below is a very basic sample skill for generating Spring Boot REST APIs.
+      </p>
 
       <pre><code># skill.md
 
-name: SQL Optimizer
-purpose: Improve SQL query performance
+name: Spring Boot REST API Skill
+
+description: |
+  Helps generate REST APIs using Spring Boot best practices.
 
 instructions:
-  - Analyze slow SQL queries
-  - Suggest indexing improvements
-  - Recommend query rewrites
-  - Avoid full table scans where possible
+  - Use layered architecture
+  - Use constructor injection
+  - Use ResponseEntity for responses
+  - Follow REST naming conventions
+  - Add exception handling
 
 examples:
-  - Convert subqueries into joins
-  - Use indexes on filtering columns</code></pre>
-    </div>
+  - Create CRUD controller
+  - Generate service layer
+  - Add repository interface
+</code></pre>
 
-    <div class="section">
-      <h2>Where Should Skills Be Placed?</h2>
+      <h3>What This Skill Does</h3>
 
-      <p>
-        Skills are commonly stored inside a dedicated <span class="highlight">skills/</span>
-        directory at the root of the repository.
-      </p>
+      <ul>
+        <li>Guides Copilot to generate Spring Boot APIs</li>
+        <li>Encourages best practices automatically</li>
+        <li>Improves consistency across developers</li>
+      </ul>
+    </section>
 
-      <pre><code>repository-root/
-├── skills/
-│   ├── sql-optimizer/
-│   ├── documentation-helper/
-│   └── api-validator/
-├── src/
-├── README.md
-└── package.json</code></pre>
+    <section class="card">
+      <h2>7. Final Summary</h2>
 
       <p>
-        Keeping skills in a centralized folder makes discovery, reuse, and
-        maintenance easier across the project.
+        GitHub Copilot Skills help transform Copilot from a generic AI assistant into a
+        project-aware engineering assistant.
       </p>
-    </div>
 
-    <div class="footer">
-      Built for GitHub Pages • Dark Theme • Responsive Design
-    </div>
+      <p>
+        By combining reusable instructions, examples, and conventions,
+        skills improve:
+      </p>
+
+      <ul>
+        <li>Developer productivity</li>
+        <li>Code quality</li>
+        <li>Team consistency</li>
+        <li>Architecture alignment</li>
+      </ul>
+
+      <p>
+        For enterprise repositories, skills can become a powerful way to encode and share
+        engineering standards.
+      </p>
+    </section>
 
   </div>
+
+  <footer>
+    Created for GitHub Pages • Dark Theme • GitHub Copilot Skills Guide
+  </footer>
+
 </body>
 </html>
