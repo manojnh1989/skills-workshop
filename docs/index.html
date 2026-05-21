@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Copilot Skills Explained</title>
+    <title>GitHub Copilot Skills Guide</title>
 
     <style>
         * {
@@ -13,8 +13,8 @@
         }
 
         body {
-            background: #0f172a;
-            color: #e2e8f0;
+            background: #0f1117;
+            color: #e6edf3;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
             padding: 40px;
@@ -26,56 +26,60 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #111827, #1e293b);
+            background: linear-gradient(135deg, #1f2937, #111827);
+            border: 1px solid #2d3748;
             padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            margin-bottom: 40px;
-            border: 1px solid #334155;
+            border-radius: 18px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.4);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 42px;
             color: #60a5fa;
             margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 18px;
             color: #cbd5e1;
         }
 
         .section {
-            background: #111827;
-            margin-bottom: 30px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
             padding: 35px;
-            border-radius: 18px;
-            border: 1px solid #1e293b;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            margin-bottom: 30px;
+            transition: transform 0.2s ease;
         }
 
-        .section h2 {
-            color: #38bdf8;
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: #58a6ff;
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 30px;
         }
 
-        .section p,
-        .section li {
+        p {
             color: #d1d5db;
-            font-size: 1.02rem;
+            margin-bottom: 18px;
         }
 
         ul {
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
-        li {
+        ul li {
             margin-bottom: 12px;
+            color: #d1d5db;
         }
 
         .highlight {
-            color: #facc15;
+            color: #93c5fd;
             font-weight: bold;
         }
 
@@ -87,44 +91,57 @@
             border-radius: 12px;
         }
 
-        th {
-            background: #2563eb;
+        table th {
+            background: #1d4ed8;
             color: white;
             padding: 16px;
             text-align: left;
+            font-size: 16px;
         }
 
-        td {
-            padding: 16px;
-            border-bottom: 1px solid #334155;
-            background: #1e293b;
+        table td {
+            background: #111827;
             color: #e5e7eb;
+            padding: 16px;
+            border-bottom: 1px solid #374151;
+            vertical-align: top;
         }
 
-        tr:hover td {
-            background: #273549;
+        table tr:hover td {
+            background: #1f2937;
         }
 
         .code-block {
-            background: #020617;
-            border: 1px solid #334155;
+            background: #0d1117;
+            border: 1px solid #30363d;
             padding: 20px;
             border-radius: 12px;
             margin-top: 20px;
             overflow-x: auto;
         }
 
-        code {
-            color: #7dd3fc;
-            font-family: Consolas, monospace;
-            font-size: 1rem;
+        pre {
+            color: #7ee787;
+            font-size: 15px;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #94a3b8;
-            font-size: 0.95rem;
+        .footer-note {
+            margin-top: 25px;
+            padding: 20px;
+            background: #1e293b;
+            border-left: 5px solid #3b82f6;
+            border-radius: 10px;
+            color: #cbd5e1;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
         @media (max-width: 768px) {
@@ -133,15 +150,15 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 32px;
             }
 
-            .section h2 {
-                font-size: 1.5rem;
+            h2 {
+                font-size: 24px;
             }
 
             table {
-                font-size: 0.9rem;
+                font-size: 14px;
             }
         }
     </style>
@@ -149,207 +166,200 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="hero">
-        <h1>GitHub Copilot Skills</h1>
-        <p>
-            Understanding how <span class="highlight">Skills</span> work in AI agents and GitHub Copilot.
-            This page explains what skills are, why they are useful, and how they compare with traditional instruction files.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Who Introduced Skills in Agents?</h2>
-
-        <p>
-            The concept of <span class="highlight">Skills</span> in AI agents became popular through
-            modern AI tooling ecosystems such as GitHub Copilot Agent Mode, OpenAI Agent architectures,
-            LangChain, Semantic Kernel, and other autonomous AI frameworks.
-        </p>
-
-        <p>
-            Skills are designed to make AI agents modular, reusable, and context-aware. Instead of placing
-            all instructions into a single large prompt, developers can organize functionality into smaller,
-            specialized capability units called skills.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>What are Skills in Agents?</h2>
-
-        <p>
-            Skills are reusable instruction modules that teach an AI agent how to perform a specific task.
-        </p>
-
-        <ul>
-            <li>They contain domain-specific knowledge.</li>
-            <li>They guide the agent with structured instructions.</li>
-            <li>They help the agent perform actions consistently.</li>
-            <li>They can be reused across repositories and projects.</li>
-        </ul>
-
-        <p>
-            Example:
-        </p>
-
-        <div class="code-block">
-<code>
-Java API Skill:
-- How to generate REST endpoints
-- Coding standards
-- Naming conventions
-- Error handling patterns
-- Security practices
-</code>
+        <div class="hero">
+            <div class="tag">GitHub Copilot • AI Skills</div>
+            <h1>Understanding Skills in AI Agents</h1>
+            <p>
+                Skills help AI agents become more specialized, reusable, and context-aware.
+                They allow tools like GitHub Copilot to understand how to solve specific
+                tasks consistently within a repository.
+            </p>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Why Skills?</h2>
+        <div class="section">
+            <h2>What are Skills in Agents?</h2>
 
-        <ul>
-            <li>
-                <span class="highlight">Modularity:</span>
-                Skills separate responsibilities into smaller reusable units.
-            </li>
+            <p>
+                Skills are structured capability definitions that provide reusable knowledge,
+                instructions, workflows, examples, and context to an AI agent.
+            </p>
 
-            <li>
-                <span class="highlight">Maintainability:</span>
-                Easier to update one skill instead of changing large prompts everywhere.
-            </li>
+            <p>
+                Instead of repeatedly giving prompts to the AI, a skill acts like a
+                pre-defined expertise module that the agent can automatically discover
+                and apply.
+            </p>
 
-            <li>
-                <span class="highlight">Better Context Management:</span>
-                AI loads only relevant instructions when required.
-            </li>
+            <ul>
+                <li>Defines how the AI should solve a specific problem</li>
+                <li>Contains domain-specific guidance</li>
+                <li>Improves consistency of generated responses</li>
+                <li>Can include examples, rules, and workflows</li>
+                <li>Helps Copilot understand repository conventions</li>
+            </ul>
+        </div>
 
-            <li>
-                <span class="highlight">Scalability:</span>
-                Large enterprise repositories can organize multiple skills cleanly.
-            </li>
+        <div class="section">
+            <h2>Why Skills?</h2>
 
-            <li>
-                <span class="highlight">Consistency:</span>
-                Ensures coding patterns remain standardized across teams.
-            </li>
-        </ul>
-    </div>
+            <p>
+                AI agents work better when they are provided with focused and reusable context.
+                Skills reduce ambiguity and improve accuracy.
+            </p>
 
-    <div class="section">
-        <h2>Skills vs Instruction Files</h2>
+            <ul>
+                <li>
+                    <span class="highlight">Consistency:</span>
+                    Ensures the AI follows the same patterns every time
+                </li>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Skills</th>
-                    <th>Instruction Files</th>
-                </tr>
-            </thead>
+                <li>
+                    <span class="highlight">Reusability:</span>
+                    One skill can be reused across multiple prompts and developers
+                </li>
 
-            <tbody>
-                <tr>
-                    <td>Purpose</td>
-                    <td>Reusable capability modules</td>
-                    <td>General project guidance</td>
-                </tr>
+                <li>
+                    <span class="highlight">Domain Knowledge:</span>
+                    Encapsulates project-specific best practices
+                </li>
 
-                <tr>
-                    <td>Granularity</td>
-                    <td>Focused and task-specific</td>
-                    <td>Broad instructions</td>
-                </tr>
+                <li>
+                    <span class="highlight">Reduced Prompt Size:</span>
+                    Developers do not need to repeatedly explain instructions
+                </li>
 
-                <tr>
-                    <td>Reusability</td>
-                    <td>Highly reusable</td>
-                    <td>Usually repository-specific</td>
-                </tr>
+                <li>
+                    <span class="highlight">Better Automation:</span>
+                    Copilot can automatically discover and apply the skill
+                </li>
+            </ul>
+        </div>
 
-                <tr>
-                    <td>Maintainability</td>
-                    <td>Easy to manage independently</td>
-                    <td>Can become large and difficult</td>
-                </tr>
+        <div class="section">
+            <h2>Skills vs Instruction Files</h2>
 
-                <tr>
-                    <td>Scalability</td>
-                    <td>Better for enterprise projects</td>
-                    <td>Limited scalability</td>
-                </tr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Skills</th>
+                        <th>Instruction Files</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td>Agent Context</td>
-                    <td>Loaded dynamically when needed</td>
-                    <td>Often loaded globally</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>Purpose</td>
+                        <td>Provide reusable specialized capabilities</td>
+                        <td>Provide generic project guidance</td>
+                    </tr>
 
-                <tr>
-                    <td>Best Use Case</td>
-                    <td>Specialized workflows</td>
-                    <td>General coding standards</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <tr>
+                        <td>Scope</td>
+                        <td>Task or domain specific</td>
+                        <td>Broad repository-level instructions</td>
+                    </tr>
 
-    <div class="section">
-        <h2>Benefits of Using Skills</h2>
+                    <tr>
+                        <td>Reusability</td>
+                        <td>Highly reusable across tasks</td>
+                        <td>Usually static and general</td>
+                    </tr>
 
-        <ul>
-            <li>Cleaner repository organization</li>
-            <li>Reduced prompt duplication</li>
-            <li>Faster onboarding for developers</li>
-            <li>Better AI-generated code quality</li>
-            <li>Standardized engineering practices</li>
-            <li>Improved maintainability for large projects</li>
-            <li>Supports multiple specialized domains</li>
-        </ul>
-    </div>
+                    <tr>
+                        <td>Structure</td>
+                        <td>Organized into dedicated skill folders</td>
+                        <td>Normally plain markdown or config files</td>
+                    </tr>
 
-    <div class="section">
-        <h2>Where Should Skills Be Placed?</h2>
+                    <tr>
+                        <td>Examples</td>
+                        <td>Can include workflows and examples</td>
+                        <td>Mostly textual guidance</td>
+                    </tr>
 
-        <p>
-            GitHub Copilot expects skills to be placed inside the
-            <span class="highlight">.github/skills</span> directory.
-        </p>
+                    <tr>
+                        <td>Discovery</td>
+                        <td>Automatically discovered by Copilot</td>
+                        <td>Read as general repository instructions</td>
+                    </tr>
 
-        <p>
-            Example repository structure:
-        </p>
+                    <tr>
+                        <td>Use Case</td>
+                        <td>Java API generation, testing, deployment, etc.</td>
+                        <td>Coding standards, naming conventions, policies</td>
+                    </tr>
 
-        <div class="code-block">
-<code>
+                    <tr>
+                        <td>Flexibility</td>
+                        <td>Modular and extensible</td>
+                        <td>Less modular</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Benefits of Using Skills</h2>
+
+            <ul>
+                <li>Improves AI-generated code quality</li>
+                <li>Reduces repetitive prompting effort</li>
+                <li>Helps standardize implementation patterns</li>
+                <li>Enables faster onboarding for developers</li>
+                <li>Allows modular AI capabilities inside repositories</li>
+                <li>Improves productivity and developer experience</li>
+                <li>Supports scalable AI-assisted development</li>
+            </ul>
+
+            <div class="footer-note">
+                Skills are especially useful in large enterprise repositories where
+                multiple teams need consistent AI-assisted development behavior.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Where Should the Skill Be Placed?</h2>
+
+            <p>
+                GitHub Copilot can automatically understand and discover skills when they are
+                placed inside the <span class="highlight">.github/skills</span> directory
+                of the repository.
+            </p>
+
+            <p>
+                Example folder structure:
+            </p>
+
+            <div class="code-block">
+<pre>
 .github/
 └── skills/
     └── java-api-skill/
         └── SKILL.md
-</code>
+</pre>
+            </div>
+
+            <p>
+                In this structure:
+            </p>
+
+            <ul>
+                <li><span class="highlight">.github</span> → Repository-level AI metadata</li>
+                <li><span class="highlight">skills</span> → Folder containing all skills</li>
+                <li><span class="highlight">java-api-skill</span> → Dedicated skill module</li>
+                <li><span class="highlight">SKILL.md</span> → Main skill definition file</li>
+            </ul>
+
+            <div class="footer-note">
+                GitHub Copilot scans the <strong>.github/skills</strong> location to identify
+                reusable AI capabilities and apply them while generating code or assisting developers.
+            </div>
         </div>
 
-        <p style="margin-top:20px;">
-            Example exact path:
-        </p>
-
-        <div class="code-block">
-<code>
-.github\skills\java-api-skill\SKILL.md
-</code>
-        </div>
-
-        <p style="margin-top:20px;">
-            The <span class="highlight">SKILL.md</span> file contains the instructions,
-            conventions, examples, and behavior guidance for the AI agent.
-        </p>
     </div>
-
-    <div class="footer">
-        Created for explaining GitHub Copilot Skills and Agent Architecture
-    </div>
-
-</div>
 
 </body>
 </html>
