@@ -16,93 +16,103 @@
       background: #0d1117;
       color: #e6edf3;
       line-height: 1.7;
-      padding: 0;
+      padding: 40px;
     }
 
-    header {
-      background: linear-gradient(135deg, #161b22, #1f2937);
-      padding: 60px 20px;
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
       text-align: center;
-      border-bottom: 1px solid #30363d;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #161b22, #1f2937);
+      border-radius: 18px;
+      border: 1px solid #30363d;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
     }
 
-    header h1 {
+    .hero h1 {
       font-size: 3rem;
       color: #58a6ff;
       margin-bottom: 15px;
     }
 
-    header p {
+    .hero p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
       max-width: 900px;
       margin: auto;
-      color: #c9d1d9;
-      font-size: 1.1rem;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 0;
-    }
-
-    .card {
+    .section {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 16px;
       padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    h2 {
-      color: #58a6ff;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    h3 {
+    .section h2 {
       color: #79c0ff;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 18px;
+      font-size: 2rem;
+      border-left: 5px solid #58a6ff;
+      padding-left: 12px;
     }
 
-    p {
+    .section p {
       margin-bottom: 15px;
-      color: #d0d7de;
+      color: #d2d8df;
     }
 
     ul {
-      padding-left: 20px;
-      margin-top: 10px;
+      padding-left: 25px;
+      margin-top: 15px;
     }
 
     li {
       margin-bottom: 10px;
-      color: #d0d7de;
     }
 
-    code {
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      border: 1px solid #30363d;
+      padding: 16px;
+      text-align: left;
+    }
+
+    .compare-table th {
       background: #21262d;
-      color: #7ee787;
-      padding: 2px 6px;
-      border-radius: 5px;
-      font-family: Consolas, monospace;
+      color: #58a6ff;
     }
 
-    pre {
+    .compare-table tr:nth-child(even) {
+      background: #1b2128;
+    }
+
+    .code-block {
       background: #0b0f14;
       border: 1px solid #30363d;
       border-radius: 12px;
       padding: 20px;
       overflow-x: auto;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 20px;
+      color: #7ee787;
+      font-family: Consolas, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
     }
 
     .highlight {
@@ -110,263 +120,251 @@
       font-weight: bold;
     }
 
-    .folder-structure {
-      color: #7ee787;
-      font-family: Consolas, monospace;
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #8b949e;
+      font-size: 0.95rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #30363d;
-      color: #8b949e;
-      margin-top: 40px;
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #238636;
+      color: white;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      body {
+        padding: 20px;
+      }
+
+      .hero h1 {
         font-size: 2.2rem;
       }
 
-      .card {
-        padding: 20px;
+      .section h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>GitHub Copilot Skills</h1>
-    <p>
-      A beginner-friendly guide to understanding Skills in GitHub Copilot, why they matter,
-      how they differ from instruction files, and how to create your own reusable skill.
-    </p>
-  </header>
-
   <div class="container">
 
-    <section class="card">
-      <h2>1. What are Skills?</h2>
+    <section class="hero">
+      <div class="badge">GitHub Copilot Skills Guide</div>
+      <h1>Understanding GitHub Copilot Skills</h1>
       <p>
-        Skills are reusable capability modules that help GitHub Copilot perform specialized tasks.
-        A skill usually contains:
-      </p>
-
-      <ul>
-        <li>Instructions for Copilot</li>
-        <li>Reusable prompts</li>
-        <li>Reference files or templates</li>
-        <li>Task-specific knowledge</li>
-      </ul>
-
-      <p>
-        Think of a skill as a <span class="highlight">mini expert package</span> that teaches Copilot
-        how to solve a specific type of problem consistently.
-      </p>
-
-      <p>
-        Example:
-      </p>
-
-      <ul>
-        <li>Java API Skill</li>
-        <li>React UI Skill</li>
-        <li>SQL Optimization Skill</li>
-        <li>Security Review Skill</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>2. Why Skills?</h2>
-
-      <p>
-        Skills improve the quality and consistency of Copilot-generated responses.
-      </p>
-
-      <h3>Main Reasons</h3>
-      <ul>
-        <li>Standardize coding practices across teams</li>
-        <li>Reduce repetitive prompt writing</li>
-        <li>Provide domain-specific intelligence</li>
-        <li>Improve code consistency</li>
-        <li>Enable reusable workflows</li>
-        <li>Help Copilot understand project conventions</li>
-      </ul>
-
-      <p>
-        Instead of repeatedly explaining project rules to Copilot,
-        the skill acts as a reusable knowledge layer.
+        Learn what skills are, why they matter, how they differ from instruction files,
+        and how to structure and place them properly inside your repository so that
+        GitHub Copilot can understand and use them effectively.
       </p>
     </section>
 
-    <section class="card">
-      <h2>3. Skills vs Instruction Files</h2>
-
+    <section class="section">
+      <h2>What are Skills?</h2>
       <p>
-        Skills and instruction files are related, but they solve different problems.
+        Skills are reusable capability definitions that provide additional context,
+        workflows, examples, and instructions for GitHub Copilot.
       </p>
 
-      <table style="width:100%; border-collapse: collapse; margin-top:20px;">
-        <tr style="background:#21262d;">
-          <th style="padding:15px; border:1px solid #30363d;">Feature</th>
-          <th style="padding:15px; border:1px solid #30363d;">Skills</th>
-          <th style="padding:15px; border:1px solid #30363d;">Instruction Files</th>
-        </tr>
+      <p>
+        A skill teaches Copilot how your project works, how coding standards should be followed,
+        or how specific tasks should be completed.
+      </p>
 
-        <tr>
-          <td style="padding:15px; border:1px solid #30363d;">Purpose</td>
-          <td style="padding:15px; border:1px solid #30363d;">Reusable capabilities</td>
-          <td style="padding:15px; border:1px solid #30363d;">Behavior guidance</td>
-        </tr>
+      <p>
+        Think of a skill as a focused knowledge package that helps Copilot generate
+        more accurate, structured, and project-aware responses.
+      </p>
+    </section>
 
-        <tr>
-          <td style="padding:15px; border:1px solid #30363d;">Scope</td>
-          <td style="padding:15px; border:1px solid #30363d;">Task or domain specific</td>
-          <td style="padding:15px; border:1px solid #30363d;">Repository-wide instructions</td>
-        </tr>
+    <section class="section">
+      <h2>Why Skills?</h2>
+      <p>
+        By default, GitHub Copilot understands general programming concepts.
+        However, every organization and repository has unique patterns, architectures,
+        naming standards, and workflows.
+      </p>
 
-        <tr>
-          <td style="padding:15px; border:1px solid #30363d;">Reusability</td>
-          <td style="padding:15px; border:1px solid #30363d;">Highly reusable</td>
-          <td style="padding:15px; border:1px solid #30363d;">Mostly project-specific</td>
-        </tr>
+      <p>
+        Skills help bridge that gap by giving Copilot project-specific intelligence.
+      </p>
 
-        <tr>
-          <td style="padding:15px; border:1px solid #30363d;">Complexity</td>
-          <td style="padding:15px; border:1px solid #30363d;">Can contain workflows/templates</td>
-          <td style="padding:15px; border:1px solid #30363d;">Usually plain guidance</td>
-        </tr>
+      <ul>
+        <li>Improve response accuracy</li>
+        <li>Reduce repetitive prompting</li>
+        <li>Enforce coding standards</li>
+        <li>Provide reusable workflows</li>
+        <li>Help new developers onboard faster</li>
+        <li>Generate consistent code patterns</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Skills vs Instruction Files</h2>
+
+      <p>
+        Skills and instruction files may appear similar, but they serve different purposes.
+      </p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Skills</th>
+            <th>Instruction Files</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Purpose</td>
+            <td>Reusable task-specific capabilities</td>
+            <td>General repository guidance</td>
+          </tr>
+          <tr>
+            <td>Scope</td>
+            <td>Focused and modular</td>
+            <td>Broad repository-level behavior</td>
+          </tr>
+          <tr>
+            <td>Usage</td>
+            <td>Activated for specific workflows</td>
+            <td>Applied globally</td>
+          </tr>
+          <tr>
+            <td>Examples</td>
+            <td>API generation, test creation, SQL patterns</td>
+            <td>Code style, architecture rules, conventions</td>
+          </tr>
+          <tr>
+            <td>Reusability</td>
+            <td>Highly reusable across repositories</td>
+            <td>Mostly repository-specific</td>
+          </tr>
+        </tbody>
       </table>
-
-      <h3>Simple Analogy</h3>
-      <p>
-        <span class="highlight">Instruction File</span> = Company rules document.
-      </p>
-
-      <p>
-        <span class="highlight">Skill</span> = Specialized engineer with reusable expertise.
-      </p>
     </section>
 
-    <section class="card">
-      <h2>4. Benefits of Using Skills</h2>
+    <section class="section">
+      <h2>Benefits of Using Skills</h2>
 
       <ul>
-        <li><strong>Better Accuracy:</strong> Copilot understands the domain better.</li>
-        <li><strong>Consistency:</strong> Teams follow the same implementation patterns.</li>
-        <li><strong>Faster Development:</strong> Less time spent re-explaining prompts.</li>
-        <li><strong>Knowledge Sharing:</strong> Best practices become reusable assets.</li>
-        <li><strong>Scalability:</strong> New developers onboard faster.</li>
-        <li><strong>Automation:</strong> Repetitive tasks become easier to generate.</li>
+        <li><span class="highlight">Higher Quality Suggestions:</span> Copilot understands repository-specific workflows.</li>
+        <li><span class="highlight">Consistency:</span> Generates similar patterns across teams.</li>
+        <li><span class="highlight">Reduced Prompt Engineering:</span> Less manual explanation needed.</li>
+        <li><span class="highlight">Better Productivity:</span> Faster development cycles.</li>
+        <li><span class="highlight">Reusable Knowledge:</span> Skills can be shared across repositories.</li>
+        <li><span class="highlight">Improved Onboarding:</span> New developers understand standards quickly.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Basic Skill Structure</h2>
+
+      <p>
+        A GitHub Copilot skill usually contains:
+      </p>
+
+      <ul>
+        <li>Name of the skill</li>
+        <li>Description</li>
+        <li>Instructions or workflow steps</li>
+        <li>Examples</li>
+        <li>Expected coding patterns</li>
       </ul>
 
       <p>
-        Skills are especially useful in large enterprise repositories where standards and
-        architecture patterns must remain consistent.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>5. Basic Skill Structure</h2>
-
-      <p>
-        A skill normally contains metadata, instructions, and reusable context.
+        Example simple skill:
       </p>
 
-      <h3>Example Repository Structure</h3>
-
-      <pre class="folder-structure">
-.github/
-└── skills/
-    └── java-api-skill/
-        ├── skill.md
-        ├── examples.md
-        └── templates/
-            └── controller-template.java
-      </pre>
-
-      <h3>Where Should Skills Be Placed?</h3>
-
-      <p>
-        Skills should generally be placed under:
-      </p>
-
-      <pre><code>.github/skills/</code></pre>
-
-      <p>
-        GitHub Copilot can use these repository-level skill definitions to better understand
-        project-specific reusable capabilities.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>6. Simple Sample Skill</h2>
-
-      <p>
-        Below is a very basic sample skill for generating Spring Boot REST APIs.
-      </p>
-
-      <pre><code># skill.md
-
-name: Spring Boot REST API Skill
+      <div class="code-block">
+name: java-api-skill
 
 description: |
-  Helps generate REST APIs using Spring Boot best practices.
+  Generates REST API endpoints using Spring Boot standards.
 
-instructions:
-  - Use layered architecture
+instructions: |
+  - Use Spring Boot REST controllers
   - Use constructor injection
+  - Add service and repository layers
   - Use ResponseEntity for responses
-  - Follow REST naming conventions
-  - Add exception handling
+  - Add proper exception handling
 
-examples:
-  - Create CRUD controller
-  - Generate service layer
-  - Add repository interface
-</code></pre>
+examples: |
+  Example endpoint:
 
-      <h3>What This Skill Does</h3>
-
-      <ul>
-        <li>Guides Copilot to generate Spring Boot APIs</li>
-        <li>Encourages best practices automatically</li>
-        <li>Improves consistency across developers</li>
-      </ul>
+  @GetMapping("/users")
+  public ResponseEntity&lt;List&lt;User&gt;&gt; getUsers() {
+      return ResponseEntity.ok(userService.getAllUsers());
+  }
+      </div>
     </section>
 
-    <section class="card">
-      <h2>7. Final Summary</h2>
+    <section class="section">
+      <h2>Where Should Skills Be Placed?</h2>
 
       <p>
-        GitHub Copilot Skills help transform Copilot from a generic AI assistant into a
-        project-aware engineering assistant.
+        Skills should typically be placed inside the <span class="highlight">.github</span>
+        directory so that GitHub Copilot can discover repository-level guidance.
       </p>
 
       <p>
-        By combining reusable instructions, examples, and conventions,
-        skills improve:
+        Example repository structure:
+      </p>
+
+      <div class="code-block">
+my-repository/
+│
+├── .github/
+│   ├── instructions/
+│   │   └── general.instructions.md
+│   │
+│   └── skills/
+│       └── java-api-skill.md
+│
+├── src/
+├── pom.xml
+└── README.md
+      </div>
+
+      <p>
+        In this structure:
       </p>
 
       <ul>
-        <li>Developer productivity</li>
-        <li>Code quality</li>
-        <li>Team consistency</li>
-        <li>Architecture alignment</li>
+        <li><span class="highlight">instructions/</span> contains global repository guidance.</li>
+        <li><span class="highlight">skills/</span> contains focused reusable capabilities.</li>
       </ul>
 
       <p>
-        For enterprise repositories, skills can become a powerful way to encode and share
-        engineering standards.
+        Organizing skills under <span class="highlight">.github/skills</span>
+        makes the repository cleaner and easier for teams to maintain.
       </p>
     </section>
+
+    <section class="section">
+      <h2>Summary</h2>
+
+      <p>
+        GitHub Copilot skills help transform Copilot from a generic coding assistant
+        into a repository-aware development partner.
+      </p>
+
+      <p>
+        When skills are designed properly, teams gain better consistency,
+        faster development, reusable knowledge, and improved developer experience.
+      </p>
+    </section>
+
+    <div class="footer">
+      Created for GitHub Pages • Dark Theme • GitHub Copilot Skills Documentation
+    </div>
 
   </div>
-
-  <footer>
-    Created for GitHub Pages • Dark Theme • GitHub Copilot Skills Guide
-  </footer>
-
 </body>
 </html>
